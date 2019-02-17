@@ -39,5 +39,8 @@ Follow instructions in order
 
 ## Left out
 * Frontend - lack of time, and also not a frontend developer to code a custom frontend application for custom backend API.
+* Bastion Host - lack of time, this would have simplified setup for the end user to setup application E2E.
+   * Would have also secured the infrastructure as only the bastion host will be allowed to ssh connect to the infrastructure
+   * All utilities like gcloud, kubectl, helm, terraform could be installed on bastion allowing simple setup on client workstation.
 
 >> Note: But backend REST API integrates with Postgres DB and same can be tested using Postman with help of sample collection.
