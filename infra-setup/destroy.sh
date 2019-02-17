@@ -7,5 +7,5 @@ terraform destroy
 cd ..
 
 cd vpc
-terraform destory
+terraform destroy
 cd ..
