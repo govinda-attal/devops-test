@@ -31,6 +31,9 @@ Run setup.sh
 
 >> Note: If need be the CI/CD tools like Harness or Codefresh could be used to deploy helm charts to K8s cluster instead of bash scripts.
 
+Swagger Spec can be seen https://demo.<public-ip>.xip.io/swaggerui/?url=https://demo.<public-ip>.xip.io/api/api/swagger.yaml
+(but cannot be tested using URL, instead use Postman as below)
+
 ### Using Postman to test Articles API 
 
 1. Start postman utility
