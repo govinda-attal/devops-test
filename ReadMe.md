@@ -32,7 +32,7 @@ For my current skillsets, I have chosen GCP over AWS - purely to save sometime o
 
 ## Setup Instructions
 
-Follow instructions in following order
+Follow instructions in order
 1. [./infra-setup/ReadMe.md](./infra-setup/ReadMe.md)
 2. [./k8s-services/ReadMe.md](./k8s-services/ReadMe.md)
 3. [./helm-chart/ReadMe.md](./helm-chart/ReadMe.md)
