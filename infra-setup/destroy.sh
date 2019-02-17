@@ -3,5 +3,5 @@
 gcloud auth activate-service-account --key-file=./creds/serviceaccount.json
 
 cd resources 
-terraform destroy
+terraform destroy -auto-approve
 cd ..
