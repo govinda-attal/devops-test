@@ -1,15 +1,14 @@
-# Parameters authorized:
-# name (mandatory)
-# zone (mandatory)
-# env (mandatory)
+
 variable "general" {
   type        = "map"
   description = "Global parameters"
   default = {
+    region = "australia-southeast1"
     zone = "australia-southeast1-a"
     name = "demo-k8s"
   }
 }
+
 
 # Parameters authorized:
 # network (default: default)
@@ -43,13 +42,15 @@ variable "master" {
 # image (default: COS)
 # local_ssd_count (default: 0)
 # oauth_scopes (default: https://www.googleapis.com/auth/compute,https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring)
-# machine_type (default: n1-standard-1)
+# machine_type (default: n1-standard-4)
 # preemptible (default: false)
 # service_account (default: default)
 variable "default_node_pool" {
   type        = "map"
   default     = {
     service_account = "demo-k8s@genial-broker-231710.iam.gserviceaccount.com"
+    node_count = 1
+    machine_type = "n1-standard-4"
   }
   description = "Default pool setting"
   

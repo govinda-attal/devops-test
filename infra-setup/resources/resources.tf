@@ -1,11 +1,22 @@
+resource "google_compute_subnetwork" "demo-subnetwork" {
+  name          = "${var.master["subnetwork"]}"
+  ip_cidr_range = "10.2.0.0/16"
+  region        = "${var.general["region"]}"
+  network       = "${google_compute_network.demo-network.self_link}"
+}
+
+resource "google_compute_network" "demo-network" {
+  name                    = "${var.master["network"]}"
+  auto_create_subnetworks = false
+}
+
 resource "google_container_cluster" "demo-k8s" {
   name        = "${var.general["name"]}"
   description = "Kubernetes ${var.general["name"]} in ${var.general["zone"]}"
   zone        = "${var.general["zone"]}"
-  # region - Conflict zone
-
-  network                  = "${lookup(var.master, "network", "default")}"
-  subnetwork               = "${lookup(var.master, "subnetwork", "default")}"
+  
+  network                  = "${google_compute_network.demo-network.name}"
+  subnetwork               = "${google_compute_subnetwork.demo-subnetwork.name}"
   initial_node_count       = "${lookup(var.default_node_pool, "node_count", 2)}"
   remove_default_node_pool = "${lookup(var.default_node_pool, "remove", false)}"
   
@@ -27,12 +38,10 @@ resource "google_container_cluster" "demo-k8s" {
     }
   }
   
-  # cluster_ipv4_cidr - default 
   enable_kubernetes_alpha = "${lookup(var.master, "enable_kubernetes_alpha", true)}"
   enable_legacy_abac      = "${lookup(var.master, "enable_legacy_abac", false)}"
   ip_allocation_policy    = "${var.ip_allocation_policy}"
   
-  # master_authorized_networks_config - disable (security)
   min_master_version = "${var.master["version"]}"
   node_version       = "${var.master["version"]}"
   monitoring_service = "${lookup(var.master, "monitoring_service", "none")}"

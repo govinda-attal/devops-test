@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "c3046243-a0f1-4b07-bb8d-755fc3bde2b3",
+		"name": "articles-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Article",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"hello-world\",\n  \"date\": \"2006-01-02\",\n  \"body\": \"hello-world-body\",\n  \"tags\": [\n    \"hello-tag\",\n    \"world-tag\"\n  ]\n}"
+				},
+				"url": {
+					"raw": "https://demo.35.189.28.115.xip.io/api/articles",
+					"protocol": "https",
+					"host": [
+						"demo",
+						"35",
+						"189",
+						"28",
+						"115",
+						"xip",
+						"io"
+					],
+					"path": [
+						"api",
+						"articles"
+					]
+				},
+				"description": "http://localhost:9080/articles "
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Article",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://demo.35.189.28.115.xip.io/api/articles/1",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"35",
+						"189",
+						"28",
+						"115",
+						"xip",
+						"io"
+					],
+					"path": [
+						"api",
+						"articles",
+						"1"
+					]
+				},
+				"description": "http://localhost:9080/articles/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Tag Summary",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://demo.35.189.28.115.xip.io/api/tags/hello-tag/20060102",
+					"protocol": "http",
+					"host": [
+						"demo",
+						"35",
+						"189",
+						"28",
+						"115",
+						"xip",
+						"io"
+					],
+					"path": [
+						"api",
+						"tags",
+						"hello-tag",
+						"20060102"
+					]
+				},
+				"description": "http://localhost:9080/tags/hello-tag/20060102"
+			},
+			"response": []
+		}
+	]
+}

@@ -16,7 +16,7 @@ app:
         host: demo-postgresql.db
         port: 5432
         username: postgres
-        password: postgres
+        password: password
         dbname: postgres
 
 service:
@@ -37,6 +37,6 @@ ingress:
     - host: demo.35.189.28.115.xip.io
 
   tls:
-   - secretName: chart-example-tls
+   - secretName: acme-tls
      hosts:
-       - api.35.189.28.115.xip.io
+       - demo.35.189.28.115.xip.io
