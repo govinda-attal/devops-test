@@ -1,11 +1,13 @@
+#!/usr/bin/env bash
+
 gcloud auth activate-service-account --key-file=./creds/serviceaccount.json
 
-cd k8s 
+cd vpc
 terraform init
 terraform apply
 cd ..
 
-cd vpc
+cd k8s 
 terraform init
 terraform apply
 cd ..
