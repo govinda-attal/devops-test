@@ -34,9 +34,9 @@ ingress:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /$1
   hosts:
-    - host: demo.35.189.28.115.xip.io
+    - host: demo.35.189.23.13.xip.io
 
   tls:
    - secretName: acme-tls
      hosts:
-       - demo.35.189.28.115.xip.io
+       - demo.35.189.23.13.xip.io
