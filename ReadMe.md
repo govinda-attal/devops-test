@@ -37,3 +37,7 @@ Follow instructions in following order
 2. [./k8s-services/ReadMe.md](./k8s-services/ReadMe.md)
 3. [./helm-chart/ReadMe.md](./helm-chart/ReadMe.md)
 
+## Left out
+* Frontend - lack of time, and also not a frontend developer to code a custom frontend application for custom backend API.
+
+>> Note: But backend REST API integrates with Postgres DB and same can be tested using Postman with help of sample collection.
